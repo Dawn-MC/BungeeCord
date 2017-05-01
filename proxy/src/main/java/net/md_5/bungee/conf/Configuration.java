@@ -57,7 +57,8 @@ public class Configuration implements ProxyConfig
     private boolean ipForward;
     private Favicon favicon;
     private int compressionThreshold = 256;
-    private String customServerName = "HexaCord";
+    private boolean preventProxyConnections;
+        private String customServerName = "HexaCord";
     private boolean alwaysHandlePackets = false;
 
     public void load()
@@ -86,6 +87,7 @@ public class Configuration implements ProxyConfig
         throttle = adapter.getInt( "connection_throttle", throttle );
         ipForward = adapter.getBoolean( "ip_forward", ipForward );
         compressionThreshold = adapter.getInt( "network_compression_threshold", compressionThreshold );
+        preventProxyConnections = adapter.getBoolean( "prevent_proxy_connections", preventProxyConnections);
         customServerName = adapter.getString( "custom_server_name", "HexaCord" );
         alwaysHandlePackets = adapter.getBoolean( "always_handle_packets", false );
 
